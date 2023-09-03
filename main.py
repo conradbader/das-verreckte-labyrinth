@@ -14,6 +14,35 @@ os.environ['SDL_RENDER_DRIVER'] = 'software'
 import pygame.display
 import path
 
+import random
+
+class QLearningAgent:
+    def __init__(self, actions, alpha=0.1, gamma=0.9, epsilon=0.1):
+        self.q_table = {}
+        self.actions = actions
+        self.alpha = alpha
+        self.gamma = gamma
+        self.epsilon = epsilon
+
+    def choose_action(self, state):
+        if random.uniform(0, 1) < self.epsilon:
+            return random.choice(self.actions)
+        else:
+            return max(self.actions, key=lambda action: self.get_q_value(state, action))
+
+    def learn(self, state, action, reward, next_state):
+        best_next_action = max(self.actions, key=lambda action: self.get_q_value(next_state, action))
+        td_target = reward + self.gamma * self.get_q_value(next_state, best_next_action)
+        td_error = td_target - self.get_q_value(state, action)
+        self.update_q_value(state, action, td_error)
+
+    def get_q_value(self, state, action):
+        return self.q_table.get((state, action), 0)
+
+    def update_q_value(self, state, action, value):
+        self.q_table[(state, action)] = self.get_q_value(state, action) + self.alpha * value
+
+
 pygame.mixer.pre_init(48000, -16, 2, 1024) #frequency = 44,1 kHz leads to audio glitching
 pygame.init()
 pygame.font.init()
@@ -25,6 +54,10 @@ pygame.time.set_timer(light_timer, 300)
 screen = pygame.display.set_mode((1000, 1000), pygame.RESIZABLE | pygame.DOUBLEBUF, 8)
 
 game = Game(screen)
+
+# Initialisierung des Q-Learning-Agenten
+actions = ["MOVE_UP", "MOVE_DOWN", "MOVE_LEFT", "MOVE_RIGHT"]
+agent = QLearningAgent(actions)
 
 fps_count = 60
 
@@ -160,6 +193,13 @@ while True:
         ### Start of the Game loop ###
         while game.running:
             game.curr_menu.display_menu()
+
+            current_state = get_game_state()
+            action = agent.choose_action(current_state)
+            perform_action(action)
+            reward = get_reward()
+            next_state = get_game_state()
+            agent.learn(current_state, action, reward, next_state)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
