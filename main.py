@@ -111,7 +111,7 @@ while True:
             def get_game_state():
                 state = {
                     "player_position": main_player.pos,
-                    "visible_items": [],  # TODO: Fügen Sie eine Liste von sichtbaren Items hinzu
+                    "visible_items": [item.pos for item in all_items if distance_between(main_player.pos, item.pos) <= light_player.light_radius],
                     "player_light_radius": light_player.light_radius,
                     # Fügen Sie hier weitere relevante Informationen hinzu
                 }
@@ -135,12 +135,11 @@ while True:
             def get_reward():
                 reward = 0
                 # Beispiel: Wenn der Spieler ein Item aufnimmt, erhöhen Sie die Belohnung
-                # if item_collected:
-                #     reward += 10
+                if any(item.collected for item in all_items):
+                    reward += 10
                 # Wenn der Spieler stirbt, geben Sie eine negative Belohnung
                 if not main_player.alive:
                     reward -= 50
-                # ... Fügen Sie hier weitere Belohnungsbedingungen hinzu
                 return reward
 
 
@@ -152,9 +151,11 @@ while True:
             # Funktionen, um das Spiel zu initialisieren und neu zu starten
             def initialize_game():
                 # TODO: Fügen Sie den Code aus dem Hauptteil von main.py hinzu, um das Spiel zu initialisieren
+                return None
 
             def restart_game():
                 # TODO: Fügen Sie den Code hinzu, um das Spiel zurückzusetzen und von vorne zu beginnen
+                return None
 
         ### Start of the Game loop ###
         while game.running:
