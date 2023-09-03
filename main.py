@@ -95,7 +95,52 @@ while True:
 
             game.setup = False
 
-    ### Start of the Game loop ###
+
+            # Funktion, um den aktuellen Spielzustand zu extrahieren
+            def get_game_state():
+                state = {
+                    "player_position": main_player.pos,
+                    "visible_items": [],  # Hier können Sie eine Liste von sichtbaren Items hinzufügen
+                    "player_light_radius": light_player.light_radius,
+                    # Fügen Sie hier weitere relevante Informationen hinzu
+                }
+                return state
+
+
+            # Funktion, um Aktionen auszuführen
+            def perform_action(action):
+                if action == "MOVE_UP":
+                    main_player.move_up()
+                elif action == "MOVE_DOWN":
+                    main_player.move_down()
+                # ... Fügen Sie hier weitere Aktionen hinzu
+
+
+            # Funktion, um eine Belohnung oder Strafe basierend auf dem Ergebnis der Aktion zurückzugeben
+            def get_reward():
+                reward = 0
+                # Beispiel: Wenn der Spieler ein Item aufnimmt, erhöhen Sie die Belohnung
+                # if item_collected:
+                #     reward += 10
+                # ... Fügen Sie hier weitere Belohnungsbedingungen hinzu
+                return reward
+
+
+            # Funktion, um zu überprüfen, ob das Spiel beendet ist
+            def is_game_over():
+                return light_player.game_over or game.game_is_won
+
+
+            # Funktionen, um das Spiel zu initialisieren und neu zu starten
+            def initialize_game():
+            # Hier können Sie den Code aus dem Hauptteil von main.py verwenden, um das Spiel zu initialisieren
+                return None
+
+            def restart_game():
+            # Hier können Sie den Code verwenden, um das Spiel zurückzusetzen und von vorne zu beginnen
+                return None
+
+        ### Start of the Game loop ###
         while game.running:
             game.curr_menu.display_menu()
 
@@ -140,7 +185,6 @@ while True:
             game.victory.display_menu()
         pygame.display.update()
         clock.tick(120)
-
 
 
 
