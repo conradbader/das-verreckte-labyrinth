@@ -107,13 +107,28 @@ while True:
                 return state
 
 
+            # Funktion, um den aktuellen Spielzustand zu extrahieren
+            def get_game_state():
+                state = {
+                    "player_position": main_player.pos,
+                    "visible_items": [],  # TODO: Fügen Sie eine Liste von sichtbaren Items hinzu
+                    "player_light_radius": light_player.light_radius,
+                    # Fügen Sie hier weitere relevante Informationen hinzu
+                }
+                return state
+
+
             # Funktion, um Aktionen auszuführen
             def perform_action(action):
                 if action == "MOVE_UP":
                     main_player.move_up()
                 elif action == "MOVE_DOWN":
                     main_player.move_down()
-                # ... Fügen Sie hier weitere Aktionen hinzu
+                elif action == "MOVE_LEFT":
+                    main_player.move_left()
+                elif action == "MOVE_RIGHT":
+                    main_player.move_right()
+                # ... Fügen Sie hier weitere Aktionen hinzu, z.B. zum Aufnehmen von Items
 
 
             # Funktion, um eine Belohnung oder Strafe basierend auf dem Ergebnis der Aktion zurückzugeben
@@ -122,6 +137,9 @@ while True:
                 # Beispiel: Wenn der Spieler ein Item aufnimmt, erhöhen Sie die Belohnung
                 # if item_collected:
                 #     reward += 10
+                # Wenn der Spieler stirbt, geben Sie eine negative Belohnung
+                if not main_player.alive:
+                    reward -= 50
                 # ... Fügen Sie hier weitere Belohnungsbedingungen hinzu
                 return reward
 
@@ -133,12 +151,10 @@ while True:
 
             # Funktionen, um das Spiel zu initialisieren und neu zu starten
             def initialize_game():
-            # Hier können Sie den Code aus dem Hauptteil von main.py verwenden, um das Spiel zu initialisieren
-                return None
+                # TODO: Fügen Sie den Code aus dem Hauptteil von main.py hinzu, um das Spiel zu initialisieren
 
             def restart_game():
-            # Hier können Sie den Code verwenden, um das Spiel zurückzusetzen und von vorne zu beginnen
-                return None
+                # TODO: Fügen Sie den Code hinzu, um das Spiel zurückzusetzen und von vorne zu beginnen
 
         ### Start of the Game loop ###
         while game.running:
