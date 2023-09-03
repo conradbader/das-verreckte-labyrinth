@@ -1,0 +1,62 @@
+|-----------------------------------------------|
+|        Programmieren 1                        |
+|        Abschluss-Projekt                      |
+|                                               |
+|        Eric Weiß           -   xxxxxxx        |
+|        Lucca Kuvecke       -   2649706        |
+|        Georg Czoske        -   2650016        |
+|        Conrad Bader        -   2649751        |
+|        Paul Bleyer         -   xxxxxxx        |
+|-----------------------------------------------|
+|    ***Konfi 1 Ideenpitch | 11.07.2023***      |
+|-----------------------------------------------|
+
+   
+
+Eric hätte gerne Liste/Tabelle mit Audioansprüchen, Georg auch für Produktion der Audios --> Danach Aufteilung, wer macht was
+
+ Labyrinth aus Vogelperspektive, sieht nur gewissen Kreis --> wird 100% so sein Grundkonzept!
+ Neue idee, Wände bestehen aus Texturen, wir haben Grafiken
+Was genau auf der Map ist, noch nicht klar -- aber Bäume, Wiese, Flüsse, Safe Spaces soll es in jeder Map geben
+ sind Flüsse zu random? Ballon Man als Charakter - wäre cool, wenn der Water Taxi sagt
+Level Ups Geräusche und Pakete vertonen, schneller vorankommen, durch Hecken vorankommen, durch Wände vorankommen (Steinwände, Heckenschere, Torsten mit den Scherenhänden - Edward eigentlich -- Spielereien möglich)
+Item könnte Scherenhände heißen
+PowerUps Kaufen - in den Safespaces (Geld??, wie bezahlt man das)
+Spiel als installierbare Applikation haben, und dann evtl. bei Steam einreichen (-- Zukunftsmusik noch, genau wie Multiplayer)
+
+Eric hat alte Sounds vorliegen
+Idee - verschiedene Welten bekommen verschiedene Themen und Sounds, Abhängig davon, wie viele Algorithmen wir bekommen, für jede Welt dann) Tag zu Nacht!!! Übergang Gewitter als Übergang mit Regen
+
+Ein erstes und ein Letztes und ein Erstes, dazwischen Flexibel
+ 1Tagwelt, Korianderacker -- GEORG
+ 2Draußenwelt, Mitternacht -- ERIC
+ 3Unterwasser-Welt (Knicklicht, andere Items, weil nicht alles unter Wasser funktioniert) man taucht zum Dungeon -- GEORG
+ 4Dungeon, Foleys Mündet in eine Höhle und da geht es zur Unterwasserwelt (Wände sollen sich verschieben können im Dungeon) --ERIC
+ XX, Schwarzweiß-Welt -- GEORG
+ Safe-Space, -- ERIC
+
+ Bei Siegerübergabe kommt irgend ein Falke und nimmt was weg, dann geht es von vorne los -- Falke fliegt immer wieder durchs Bild
+ Mehr Items, als man braucht, damit es beim nächsten Mal leicht anders ist
+ Algorithmen benutzen, dieses Gebiet kann der oder der Algorithmus sein - Wiederspielwert erhöhen
+
+
+ Conrad will mindestens 5 Welten maximal 10
+ Keine Starren Einteilungen, nicht Rechtwinklig, sondern
+ Georg und Eric überlegen sich Welten und sprechen das mit Paul und Lucca ab
+ Pixelgrafik, wer bastelt das
+ Flackern an der wand, wie verhält sich Licht auf den texturen und Animationen
+ Thema LICHT! Extrem wichtig
+ Conrad verweißt auf die Möglichkeit von Pygame
+
+ Verschiedene Charaktere (nicht durch Powerups bekommen, sondern wirklich als eigene Charaktere)
+ Falke, der Hochfliegt, größerer Kreis wird aufgedeckt
+ Zauberer, größerer Kreis wird aufgedeckt
+ Haben alle ihre stärken und Schwächen
+
+ Kommandozeile kaufen könne, wo man Code eingeben können
+ Sounds aus Shortcut - Agatha und Ballon-Man --> aus dem Rohprojekt
+ Rand der Map soll Wasser sein oder Schlucht mit Wasserfall, Strand, Wellen-Sand-Akustik
+ SafeSpeces sollen Häuser sein -- > Eigener Sound Faden, beruhigend
+
+ Chati 4.0 abbonieren und einen Account für alle 20€ Monat
+
